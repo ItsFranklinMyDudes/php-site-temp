@@ -33,6 +33,26 @@ if (isset($_POST['formSubmit'])) {
     echo '<br>';
     echo $userMessage;
 }
+
+if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+    $formError = false;
+    if (empty($_POST['inputEmail'])) {
+        $formError = true;
+        echo "Enter an email address.";
+    }
+    if (empty($_POST['inputMessage'])) {
+        $formError = true;
+        echo "Enter a message to submit.";
+    }
+    if ($formError == false) {
+        $emailAddress = $_POST["inputEmail"];
+        $messageSubmitted = $_POST["inputMessage"];
+
+        echo $emailAddress;
+        echo '<p>';
+        echo $messageSubmitted;
+    }
+}
 ?>
 <br>
 <?php echo footer() ?>
