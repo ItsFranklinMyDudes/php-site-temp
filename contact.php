@@ -1,12 +1,5 @@
-<!doctype html>
 <?php include "template.php" ?>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PHP Template</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-</head>
+<title>PHP Template</title>
 <body>
 <h1>Heading</h1>
 <div class="container-fluid">
@@ -37,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $formError = true;
         echo "Enter a message to submit.";
     }
-    if ($formError == false) {
+    if ($formError === false) {
         $emailAddress = sanitiseData($_POST["inputEmail"]);
         $messageSubmitted = sanitiseData($_POST["inputMessage"]);
 
