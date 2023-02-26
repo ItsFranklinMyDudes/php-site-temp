@@ -1,5 +1,5 @@
 <?php include "template.php" ?>
-<title>PHP Site</title>
+<title>Maccas</title>
 <body>
 <h1>Heading</h1>
 

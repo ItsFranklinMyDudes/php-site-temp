@@ -24,10 +24,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="orderForm.php">Order</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="invoice.php">Invoice</a>
+                </li>
         </div>
     </div>
 </nav>
+
 </body>
+<style>
+
+</style>
 <?php
 function footer():string
 {
