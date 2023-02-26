@@ -1,7 +1,6 @@
 <?php include "template.php" ?>
-<title>PHP Template</title>
+<title>Contact</title>
 <body>
-<h1>Heading</h1>
 <div class="container-fluid">
     <h1 class="text-primary">Please Send us a Message</h1>
     <form action="contact.php" method="post">

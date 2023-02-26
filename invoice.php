@@ -125,7 +125,6 @@ if (($handle = fopen("orders.csv", "r")) !== FALSE) {
     </div>
 </div>
 
-<?php echo footer() ?>
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>
