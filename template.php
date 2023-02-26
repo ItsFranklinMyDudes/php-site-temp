@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-secondary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="./images/maccas-logo.jpg" width="200" height="100"></a>
+        <a class="navbar-brand" href="index.php"><img src="./images/maccas-logo.jpg" width="100" height="50"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,6 +20,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="orderForm.php">Order</a>
                 </li>
         </div>
     </div>
