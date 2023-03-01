@@ -33,7 +33,6 @@
 
 </body>
 <style>
-
 </style>
 <?php
 function footer():string
