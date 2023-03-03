@@ -25,7 +25,7 @@
                     <a class="nav-link" href="orderForm.php">Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="invoice.php">Invoice</a>
+                    <a class="nav-link" href="invoiceList.php">Invoice</a>
                 </li>
         </div>
     </div>
