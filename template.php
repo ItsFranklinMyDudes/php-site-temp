@@ -10,7 +10,8 @@
 <nav class="navbar navbar-expand-sm bg-secondary">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><img src="./images/maccas-logo.jpg" width="100" height="50"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,7 +36,10 @@
 <style>
 </style>
 <?php
-function footer():string
+
+$productNames = array("product1" => "Cheeseburger", "product2" => "BigMac", "product3" => "McFlurry", "product4" => "Chips", "product5" => "Coke");
+$productPrices = array("product1" => 4.4, "product2" => 7.3, "product3" => 4, "product4" => 2, "product5" => 3.2);
+function footer(): string
 {
     date_default_timezone_set('Australia/Canberra');
     $filename = basename($_SERVER["SCRIPT_FILENAME"]);
@@ -43,12 +47,13 @@ function footer():string
     return $footer;
 }
 
-function sanitiseData($unsanitisedData):string
+function sanitiseData($unsanitisedData): string
 {
     $unsanitisedData = trim($unsanitisedData);
     $unsanitisedData = stripslashes($unsanitisedData);
     $sanitisedData = htmlspecialchars($unsanitisedData);
     return $sanitisedData;
 }
+
 ?>
 </html>

@@ -1,4 +1,6 @@
-<?php include "template.php" ?>
+<?php include "template.php";
+/** @var $productNames */
+?>
 <html>
 <title>Order Form</title>
 <body>
@@ -34,19 +36,19 @@
                     <h2>Products</h2>
                     <!--Product List-->
                     <p>Please enter the quantities of each product:</p>
-                    <label for="orderProduct1" class="form-label">Cheeseburger</label>
+                    <label for="orderProduct1" class="form-label"><?php echo $productNames["product1"]; ?></label>
                     <input type="number" class="form-control" id="orderProduct1" name="orderProduct1"
                            value="0">
-                    <label for="orderProduct2" class="form-label">BigMac</label>
+                    <label for="orderProduct2" class="form-label"><?php echo $productNames["product2"]; ?></label>
                     <input type="number" class="form-control" id="orderProduct2" name="orderProduct2"
                            value="0">
-                    <label for="orderProduct3" class="form-label">McFlurry</label>
+                    <label for="orderProduct3" class="form-label"><?php echo $productNames["product3"]; ?></label>
                     <input type="number" class="form-control" id="orderProduct3" name="orderProduct3"
                            value="0">
-                    <label for="orderProduct4" class="form-label">Chips</label>
+                    <label for="orderProduct4" class="form-label"><?php echo $productNames["product4"]; ?></label>
                     <input type="number" class="form-control" id="orderProduct4" name="orderProduct4"
                            value="0">
-                    <label for="orderProduct5" class="form-label">Coke</label>
+                    <label for="orderProduct5" class="form-label"><?php echo $productNames["product5"]; ?></label>
                     <input type="number" class="form-control" id="orderProduct5" name="orderProduct5"
                            value="0">
 
