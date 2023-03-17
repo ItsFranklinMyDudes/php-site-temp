@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $emailAddress = sanitiseData($_POST["inputEmail"]);
         $messageSubmitted = sanitiseData($_POST["inputMessage"]);
 
-       $csvFile = fopen( 'contact.scv', 'a');
+       $csvFile = fopen( 'contact.csv', 'a');
        fwrite($csvFile, $emailAddress.", ".$messageSubmitted."\n");
        fclose($csvFile);
     }
