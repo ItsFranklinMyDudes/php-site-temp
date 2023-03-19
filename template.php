@@ -36,6 +36,8 @@
 <style>
 </style>
 <?php
+session_start();
+$pdo = new SQLite3('DB') or die('couldnt open the DB');
 
 $productNames = array("product1" => "Cheeseburger", "product2" => "BigMac", "product3" => "McFlurry", "product4" => "Chips", "product5" => "Coke");
 $productPrices = array("product1" => 4.4, "product2" => 7.3, "product3" => 4, "product4" => 2, "product5" => 3.2);
