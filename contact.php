@@ -1,4 +1,7 @@
-<?php include "template.php" ?>
+<html>
+<?php include "template.php"
+/** @var $conn */
+?>
 <title>Contact</title>
 <body>
 <div class="container-fluid">
@@ -6,7 +9,8 @@
     <form action="contact.php" method="post">
         <div class="mb-3">
             <label for="inputEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="name@example.com">
+            <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp"
+                   placeholder="name@example.com">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
@@ -33,7 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $emailAddress = sanitiseData($_POST["inputEmail"]);
         $messageSubmitted = sanitiseData($_POST["inputMessage"]);
 
-        $sqlStmt = $conn->repare("INSERT INTO Contact (Email, Message) values (:ContactEmail, :Message)");
+        $sqlStmt = $conn->prepare("INSERT INTO Contact (Email, Message) VALUES (:Email, :Message)");
+        $sqlStmt->bindParam(':Email', $emailAddress);
+        $sqlStmt->bindParam(':Message', $messageSubmitted);
+        $sqlStmt->execute();
+
 //       $csvFile = fopen( 'contact.csv', 'a');
 //       fwrite($csvFile, $emailAddress.", ".$messageSubmitted."\n");
 //       fclose($csvFile);
@@ -41,5 +49,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 </body>
-<script src="js/bootstrap.bundle.min.js" ></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </html>
