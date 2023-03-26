@@ -2,7 +2,7 @@
 <html>
 <title>Maccas</title>
 <body>
-<h1>Heading</h1>
+<h1>Welcome to McDonalds</h1>
 
 <?php echo footer() ?>
 </body>

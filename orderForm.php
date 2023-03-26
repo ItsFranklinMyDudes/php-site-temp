@@ -1,5 +1,6 @@
 <?php include "template.php";
 /** @var $productNames */
+/** @var $conn */
 ?>
 <html>
 <title>Order Form</title>
@@ -90,13 +91,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if($prodQuantity5 < 0) {
         $prodQuantity5 = 0;
+    } else {
+        $orderNumber = '1';
+        $customerID = "1";
+        $productID = 5;
+        $sqlStmt = $conn->prepare("INSERT INTO Orders (OrderNumber, CustomerID, ProductID, Quantity) VALUES (:OrderNumber, :CustomerID, :ProductID, :Quantity)");
+        $sqlStmt->bindParam(':OrderNumber', $orderNumber);
+        $sqlStmt->bindParam(':CustomerID', $orderNumber);
+        $sqlStmt->bindParam(':ProductID', $productID);
+        $sqlStmt->bindParam(':Quantity', $prodQuantity5);
+        $sqlStmt->execute();
     }
 
-    $csvFile = fopen("orders.csv", "a");
-// Write the string to the end of the file.
-    fwrite($csvFile, $cusNameFirst . "," . $cusNameSecond . "," . $cusAddress . "," . $cusEmail . "," . $cusPhone . "," . $prodQuantity1 . "," . $prodQuantity2 . "," . $prodQuantity3 . "," . $prodQuantity4 . "," . $prodQuantity5 . "\n");
-// Close the connection to the file.
-    fclose($csvFile);
+//    $csvFile = fopen("orders.csv", "a");
+//// Write the string to the end of the file.
+//    fwrite($csvFile, $cusNameFirst . "," . $cusNameSecond . "," . $cusAddress . "," . $cusEmail . "," . $cusPhone . "," . $prodQuantity1 . "," . $prodQuantity2 . "," . $prodQuantity3 . "," . $prodQuantity4 . "," . $prodQuantity5 . "\n");
+//// Close the connection to the file.
+//    fclose($csvFile);
+
+    $sqlStmt = $conn->prepare("INSERT INTO Orders (OrderNumber, CustomerID, ProductID, Quanity) VALUES (:OrderNumber, :CustomerID, :ProductID, :Quanity)");
+    $sqlStmt->bindParam(':OrderNumber', );
+    $sqlStmt->bindParam(':Email', $emailAddress);
+    $sqlStmt->bindParam(':Email', $emailAddress);
+    $sqlStmt->bindParam(':Email', $emailAddress);
 }
 ?>
 
