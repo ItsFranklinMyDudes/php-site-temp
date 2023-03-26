@@ -109,11 +109,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //// Close the connection to the file.
 //    fclose($csvFile);
 
-    $sqlStmt = $conn->prepare("INSERT INTO Orders (OrderNumber, CustomerID, ProductID, Quanity) VALUES (:OrderNumber, :CustomerID, :ProductID, :Quanity)");
-    $sqlStmt->bindParam(':OrderNumber', );
-    $sqlStmt->bindParam(':Email', $emailAddress);
-    $sqlStmt->bindParam(':Email', $emailAddress);
-    $sqlStmt->bindParam(':Email', $emailAddress);
+//    $sqlStmt = $conn->prepare("INSERT INTO Orders (OrderNumber, CustomerID, ProductID, Quanity) VALUES (:OrderNumber, :CustomerID, :ProductID, :Quanity)");
+//    $sqlStmt->bindParam(':OrderNumber', );
+//    $sqlStmt->bindParam(':Email', $emailAddress);
+//    $sqlStmt->bindParam(':Email', $emailAddress);
+//    $sqlStmt->bindParam(':Email', $emailAddress);
 }
 ?>
 
