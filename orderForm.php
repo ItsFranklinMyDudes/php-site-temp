@@ -77,6 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $prodQuantity4 = sanitiseData($_POST['orderProduct4']);
     $prodQuantity5 = sanitiseData($_POST['orderProduct5']);
 
+    for($count = 0;$count <= 1 ;$count++);
+
     if($prodQuantity1 < 0) {
         $prodQuantity1 = 0;
     }
@@ -96,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $customerID = "1";
         $productID = 5;
         $sqlStmt = $conn->prepare("INSERT INTO Orders (OrderNumber, CustomerID, ProductID, Quantity) VALUES (:OrderNumber, :CustomerID, :ProductID, :Quantity)");
-        $sqlStmt->bindParam(':OrderNumber', $orderNumber);
+        $sqlStmt->bindParam(':OrderNumber', $count);
         $sqlStmt->bindParam(':CustomerID', $orderNumber);
         $sqlStmt->bindParam(':ProductID', $productID);
         $sqlStmt->bindParam(':Quantity', $prodQuantity5);

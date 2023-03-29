@@ -28,6 +28,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="invoiceList.php">Invoice</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.php">Register</a>
+                </li>
+                <style>
+                    nav-item {
+
+                    }
+                    float: left;
+                </style>
         </div>
     </div>
 </nav>
