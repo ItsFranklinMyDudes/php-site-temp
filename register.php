@@ -47,13 +47,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $sqlStmt = $conn->prepare("INSERT INTO Customers (EmailAdress, HashedPassword, FirstName, SecondName, PhoneNumber, Address) VALUES (:EmailAddress, :HashedPassword, :FirstName, :LastName, :PhoneNumber, :Address)");
-        $sqlStmt->bindParam(':EmailAddress', $username);
-        $sqlStmt->bindParam(':HashedPassword', $hashedPassword);
+        $sqlStmt = $conn->prepare("INSERT INTO Customers (EmailAddress, HashedPassword, FirstName, SecondName, PhoneNumber, Address) VALUES (:EmailAddress, :HashedPassword, :FirstName, :SecondName, :PhoneNumber, :Address)");
         $sqlStmt->bindParam(':FirstName', $firstName);
-        $sqlStmt->bindParam(':LastName', $lastName);
-        $sqlStmt->bindParam(':PhoneNumber', $phoneNumber);
+        $sqlStmt->bindParam(':SecondName', $lastName);
         $sqlStmt->bindParam(':Address', $address);
+        $sqlStmt->bindParam(':EmailAddress', $username);
+        $sqlStmt->bindParam(':PhoneNumber', $phoneNumber);
+        $sqlStmt->bindParam(':HashedPassword', $hashedPassword);
         $sqlStmt->execute();
     }
 }

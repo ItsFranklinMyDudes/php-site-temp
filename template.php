@@ -28,15 +28,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="invoiceList.php">Invoice</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.php">Register</a>
-                </li>
-                <style>
-                    nav-item {
+                <?php
+                if (isset($_SESSION["FirstName"])) {
+                    echo '<li class="nav-item" ><a class="nav-link" href = "orderForm.php"> Order Form </a ></li >';
+                    echo '<li class="nav-item" ><a class="nav-link" href = "invoiceList.php"> Invoice list</a ></li >';
+                } else {
+                    echo '<li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
+                }
 
-                    }
-                    float: left;
-                </style>
+                ?>
+                <?php
+                if (isset($_SESSION["FirstName"])) {
+                    echo '<div class="bg-light">Welcome, ' . $_SESSION["FirstName"] . '!<a class="nav-link" href="logout.php">Logout</a></div>';
+                }
+                ?>
         </div>
     </div>
 </nav>
@@ -47,6 +52,10 @@
 <?php
 session_start();
 $conn = new SQLite3('DB') or die('couldnt open the DB');
+
+if (isset($_SESSION["FirstName"])) {
+    echo '<div class="bg-light" class="nav-item">Welcome, ' . $_SESSION["FirstName"] . '!<a class="nav-link" href="logout.php">Logout</a></div>';
+}
 
 $productNames = array("product1" => "Cheeseburger", "product2" => "BigMac", "product3" => "McFlurry", "product4" => "Chips", "product5" => "Coke");
 $productPrices = array("product1" => 4.4, "product2" => 7.3, "product3" => 4, "product4" => 2, "product5" => 3.2);
