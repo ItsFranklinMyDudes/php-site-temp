@@ -11,7 +11,6 @@
             <p>Password: admin</p>
         </div>
         <div class="col-6">
-            f
             <?php if (!isset($_SESSION["EmailAddress"])) : ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <div class="form-group">

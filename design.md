@@ -20,6 +20,6 @@ Product info will be stored
 - Description
 - Quantity
 
-# Behaviour User Journey 
+## Behaviour User Journey 
 
-# Planning Diagram - Wireframe
+## Planning Diagram - Wireframe
