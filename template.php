@@ -1,3 +1,8 @@
+<?php
+session_start();
+$conn = new SQLite3('DB') or die('couldnt open the DB');
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -50,12 +55,6 @@
 <style>
 </style>
 <?php
-session_start();
-$conn = new SQLite3('DB') or die('couldnt open the DB');
-
-if (isset($_SESSION["FirstName"])) {
-    echo '<div class="bg-light" class="nav-item">Welcome, ' . $_SESSION["FirstName"] . '!<a class="nav-link" href="logout.php">Logout</a></div>';
-}
 
 $productNames = array("product1" => "Cheeseburger", "product2" => "BigMac", "product3" => "McFlurry", "product4" => "Chips", "product5" => "Coke");
 $productPrices = array("product1" => 4.4, "product2" => 7.3, "product3" => 4, "product4" => 2, "product5" => 3.2);
