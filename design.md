@@ -1,6 +1,6 @@
 # Project Overview
 
-My php site will be selling maccas toys that look like Maccas foods
+My php site will be selling Maccas toys that look like Maccas foods
 
 ## User Management
 Users will be able to login and out
