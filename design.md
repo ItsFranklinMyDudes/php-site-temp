@@ -27,14 +27,48 @@ Product info will be stored
 journey
 title Login / Log off
     section Login
-        Load main (home) page: 3: Unauthenticated User
-        Enter login details: 3: Unauthenticated User
-        Press Login Button: 3: Unauthenticated User
+        Load main (home) page: 5: Unauthenticated User
+        Enter login details: 5: Unauthenticated User
+        Press Login Button: 5: Unauthenticated User
     section Registered
-        Perform site Actions: 3: Authenticated User
+        Perform site Actions:5: Authenticated User
     section Logoff
-        Press Logoff Button in Navbar: 3: Authenticated User
-        Close Browser: 3: Unauthenticated User
+        Press Logoff Button in Navbar:5: Authenticated User
+        Close Browser:5: Unauthenticated User
+```
+```mermaid
+journey
+title Contact Us
+    section Contact Us
+        Load Contact Us page: 5: Any User
+        Enter email address : 5: Any User
+        Enter message : 5: Any User
+        Press Submit Button: 5: Any User
+    
 ```
 ## Planning Diagram - Wireframe
-https://docs.google.com/drawings/d/1DOEwe4YX8LpipM98CNDopNdx__X4pk5ya1yDTpoJUWs/edit?usp=sharing
+<img src="images/wireframes/main-page.jpg" alt="Main Page wireframe">
+
+## FlowChart
+```mermaid
+flowchart LR
+    terminalStart([Start])
+    %% Comment
+    terminalEnd([End])
+    thresholdSet(distanceThreshold = 30)
+    setPiezoPin(piezoPin = 2)
+    currentDistanceReading(distanceRead = response from Sonar)
+    activatePiezo(write HIGH to piezoPin)
+    deactivatePiezo(write LOW to piezoPin)
+
+    ifDistanceLessThanThreshold{distanceRead < distanceThreshold}
+
+    terminalStart --> thresholdSet
+    thresholdSet --> setPiezoPin
+    setPiezoPin --> currentDistanceReading
+    currentDistanceReading --> ifDistanceLessThanThreshold
+    ifDistanceLessThanThreshold --> |True| activatePiezo
+    ifDistanceLessThanThreshold --> |False| deactivatePiezo
+    deactivatePiezo --> terminalEnd
+    activatePiezo --> terminalEnd
+```
