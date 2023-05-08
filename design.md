@@ -50,25 +50,25 @@ title Contact Us
 <img src="images/wireframes/main-page.jpg" alt="Main Page wireframe">
 
 ## FlowChart
+### User Chart
 ```mermaid
 flowchart LR
     terminalStart([Start])
     %% Comment
     terminalEnd([End])
-    thresholdSet(distanceThreshold = 30)
-    setPiezoPin(piezoPin = 2)
-    currentDistanceReading(distanceRead = response from Sonar)
-    activatePiezo(write HIGH to piezoPin)
-    deactivatePiezo(write LOW to piezoPin)
-
-    ifDistanceLessThanThreshold{distanceRead < distanceThreshold}
-
+    thresholdSet(Register)
+    setPiezoPin(Login)
+    currentDistanceReading(Logout)
+    activatePiezo(Manage Product)
+    deactivatePiezo(Normal page)
+    ifDistanceLessThanThreshold(Admin)
+    
     terminalStart --> thresholdSet
     thresholdSet --> setPiezoPin
-    setPiezoPin --> currentDistanceReading
-    currentDistanceReading --> ifDistanceLessThanThreshold
+    setPiezoPin --> ifDistanceLessThanThreshold
     ifDistanceLessThanThreshold --> |True| activatePiezo
     ifDistanceLessThanThreshold --> |False| deactivatePiezo
-    deactivatePiezo --> terminalEnd
-    activatePiezo --> terminalEnd
+    deactivatePiezo --> currentDistanceReading
+    activatePiezo --> currentDistanceReading
+    currentDistanceReading --> terminalEnd
 ```
