@@ -44,7 +44,7 @@ $conn = new SQLite3('DB') or die('couldnt open the DB');
                     if ($_SESSION["AccessLevel"] == 1) {
                         ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
                                 Product Management
                             </a>
@@ -68,6 +68,7 @@ $conn = new SQLite3('DB') or die('couldnt open the DB');
 </nav>
 
 </body>
+<script src="js/bootstrap.bundle.min.js"></script>
 <style>
 </style>
 <?php

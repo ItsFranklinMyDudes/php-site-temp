@@ -126,5 +126,4 @@ if (($handle = fopen("orders.csv", "r")) !== FALSE) {
 </div>
 
 </body>
-<script src="js/bootstrap.bundle.min.js"></script>
 </html>
