@@ -1,9 +1,9 @@
-<?php include "template.php"
+<?php include "template.php";
 /** @var $conn */
 ?>
-    <title>Invoice</title>
+    <title>Invoice List</title>
     <body>
-
+    <h1 class="text-primary">Invoice List</h1>
 <?php
 // Read the contents of the file
 //$currentRow = 1;

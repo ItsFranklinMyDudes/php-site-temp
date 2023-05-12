@@ -1,8 +1,8 @@
-<?php include "template.php"
+<?php include "template.php";
 /** @var $productNames */
 /** @var $productPrices */
 ?>
-<title>Invoice List</title>
+<title>Invoice</title>
 <body>
 
 <?php

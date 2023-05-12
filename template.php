@@ -31,12 +31,12 @@ $conn = new SQLite3('DB') or die('couldnt open the DB');
                     <a class="nav-link" href="orderForm.php">Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="invoiceList.php">Invoice</a>
+                    <a class="nav-link" href="invoiceList.php">Invoice List</a>
                 </li>
                 <?php
                 if (isset($_SESSION["FirstName"])) {
                     echo '<li class="nav-item" ><a class="nav-link" href = "orderForm.php"> Order Form </a ></li >';
-                    echo '<li class="nav-item" ><a class="nav-link" href = "invoiceList.php"> Invoice list</a ></li >';
+                    echo '<li class="nav-item" ><a class="nav-link" href = "invoice.php"> Invoice</a ></li >';
                 } else {
                     echo '<li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
                 }
@@ -44,7 +44,7 @@ $conn = new SQLite3('DB') or die('couldnt open the DB');
                     if ($_SESSION["AccessLevel"] == 1) {
                         ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
                                 Product Management
                             </a>
