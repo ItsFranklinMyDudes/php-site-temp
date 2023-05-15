@@ -28,7 +28,7 @@ $conn = new SQLite3('DB') or die('couldnt open the DB');
                     <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="orderForm.php">Order</a>
+                    <a class="nav-link" href="oldorderForm.php">Order</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="invoiceList.php">Invoice List</a>

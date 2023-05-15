@@ -3,7 +3,7 @@
 <html>
 <title>Maccas</title>
 <body>
-<h1>Welcome to McDonalds</h1>
+<h1>Welcome to lil McDonalds</h1>
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">
