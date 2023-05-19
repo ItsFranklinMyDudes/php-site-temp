@@ -12,7 +12,7 @@
 //
 //        $cusNameFirst = $data[0];
 //        $cusNameSecond = $data[1];
-//        echo "<a href='invoice.php?invoiceNumber=$currentRow'>" . $cusNameFirst . " " . $cusNameSecond . "<br>" . "</a>";
+//        echo "<a href='oldinvoice.php?invoiceNumber=$currentRow'>" . $cusNameFirst . " " . $cusNameSecond . "<br>" . "</a>";
 //        $currentRow++;
 //    }
 //    fclose($handle);

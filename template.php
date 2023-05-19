@@ -27,9 +27,9 @@ $conn = new SQLite3('DB') or die('couldnt open the DB');
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="invoiceList.php">Invoice List</a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="invoiceList.php">Invoice List</a>-->
+<!--                </li>-->
                 <?php
                 if (isset($_SESSION["FirstName"])) {
                     echo '<li class="nav-item" ><a class="nav-link" href = "orderForm.php"> Order Form </a ></li >';
