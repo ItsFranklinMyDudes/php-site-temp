@@ -1,22 +1,24 @@
-<?php include "template.php";
-/** @var $conn */
-?>
-    <title>Invoice List</title>
-    <body>
-    <h1 class="text-primary">Invoice List</h1>
+<?php include "template.php" ?>
+<title>Invoice List</title>
+<body>
+
 <?php
 // Read the contents of the file
 //$currentRow = 1;
 //if (($handle = fopen("orders.csv", "r")) !== FALSE) {
 //    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 //
+//        // Customer Details
 //        $cusNameFirst = $data[0];
 //        $cusNameSecond = $data[1];
-//        echo "<a href='oldinvoice.php?invoiceNumber=$currentRow'>" . $cusNameFirst . " " . $cusNameSecond . "<br>" . "</a>";
-//        $currentRow++;
+//        echo "<p><a href='invoice.php.old?invoiceNumber=" . $currentRow . "'>" . $cusNameFirst . " " . $cusNameSecond . "</a></p>";
+//
+//        $currentRow++; //Add one to the current row
 //    }
-//    fclose($handle);
+//    fclose($handle);    // Closes the File
 //}
 
 
+
 ?>
+

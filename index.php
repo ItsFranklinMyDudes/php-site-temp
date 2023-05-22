@@ -1,9 +1,8 @@
-<?php include "template.php"; ?>
+<?php include "template.php" ?>
 <?php include 'login.php'; ?>
-<html>
-<title>Maccas</title>
+<title>PHP Template</title>
 <body>
-<h1>Welcome to lil McDonalds</h1>
+<h1>Mini Maccas</h1>
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">
@@ -31,6 +30,20 @@
     </div>
 </div>
 
-<?php echo footer() ?>
+
+<?php echo footer(); ?>
 </body>
+
 </html>
+
+
+<!--
+ <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+            <?php if (!isset($_SESSION["FirstName"])) : ?>
+
+            <?php endif; ?>
+
+-->

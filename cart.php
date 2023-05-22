@@ -15,7 +15,7 @@
 
 <?php
 // Debug Purposes
-// echo '<pre>'; print_r($_SESSION["ShoppingCart"]); echo '</pre>';
+ //echo '<pre>'; print_r($_SESSION["ShoppingCart"]); echo '</pre>';
 
 
 if (isset($_SESSION["FirstName"])) {

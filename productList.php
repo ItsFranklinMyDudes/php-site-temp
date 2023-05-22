@@ -30,7 +30,7 @@ if ($_SESSION['AccessLevel'] == 1) {
                     <?php echo $productData[0]; ?>
                 </div>
                 <div class="col-md-2">
-                    <!--            edit button-->
+                    <!-- edit button-->
                     <a href="productEdit.php?prodCode=<?php echo $productData[2]; ?>">Edit</a>
                 </div>
                 <div class="col-md-2">
@@ -42,8 +42,12 @@ if ($_SESSION['AccessLevel'] == 1) {
         }
         ?>
     </div>
+
     <?php
 } else {
     header("location:index.php");
 }
 ?>
+
+
+

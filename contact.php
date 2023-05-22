@@ -1,52 +1,54 @@
-<html>
-<?php include "template.php"
+<?php include "template.php";
 /** @var $conn */
 ?>
-<title>Contact</title>
+
+
+<title>Contact Us</title>
 <body>
 <div class="container-fluid">
     <h1 class="text-primary">Please Send us a Message</h1>
-    <form action="contact.php" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="mb-3">
-            <label for="inputEmail" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp"
+            <label for="contactEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="contactEmail" name="contactEmail"
                    placeholder="name@example.com">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-            <label for="inputMessage" class="form-label">Message</label>
-            <textarea type="text" class="form-control" id="inputMessage" name="inputMessage"></textarea>
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea class="form-control" id="contactMessage" name="contactMessage" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="formSubmit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
+
 <?php
+//if (isset($_POST['formSubmit'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $formError = false;
-    if (empty($_POST['inputEmail'])) {
-        $formError = true;
-        echo "Enter an email address.";
-        echo "<br>";
-    }
-    if (empty($_POST['inputMessage'])) {
-        $formError = true;
-        echo "Enter a message to submit.";
-    }
-    if ($formError === false) {
-        $emailAddress = sanitiseData($_POST["inputEmail"]);
-        $messageSubmitted = sanitiseData($_POST["inputMessage"]);
+    $userEmail = sanitiseData($_POST['contactEmail']);
+    $userMessage = sanitiseData($_POST['contactMessage']);
 
-        $sqlStmt = $conn->prepare("INSERT INTO Contact (Email, Message) VALUES (:Email, :Message)");
-        $sqlStmt->bindParam(':Email', $emailAddress);
-        $sqlStmt->bindParam(':Message', $messageSubmitted);
-        $sqlStmt->execute();
+    $sqlStmt = $conn->prepare("INSERT INTO Contact (ContactEmail, Message) VALUES (:ContactEmail, :Message)");
+    $sqlStmt->bindParam(':ContactEmail', $userEmail);
+    $sqlStmt->bindParam(':Message', $userMessage);
+    $sqlStmt->execute();
 
-//       $csvFile = fopen( 'contact.csv', 'a');
-//       fwrite($csvFile, $emailAddress.", ".$messageSubmitted."\n");
-//       fclose($csvFile);
-    }
+
+
+
+
+
+//    $csvFile = fopen("contact.csv", "a");
+//    fwrite($csvFile, $userEmail.",".$userMessage."\n");
+//    fclose($csvFile);
 }
+
 ?>
+
+
+
+
+<?php echo footer() ?>
 </body>
+<!--<script src="js/bootstrap.bundle.min.js"></script>-->
 </html>
