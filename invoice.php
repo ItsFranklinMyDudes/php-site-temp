@@ -19,7 +19,7 @@ if (!isset($_SESSION["CustomerID"])) {
         // no 'order' variable detected in the url.
         $custID = $_SESSION['CustomerID'];
 
-        if ($_SESSION["AccessLevel"] == 2) {
+        if ($_SESSION["AccessLevel"] == 1) {
             // Case 5 - Generate a list of all invoices for administrators
             $query = $conn->query("SELECT OrderNumber FROM Orders");
             $count = $conn->querySingle("SELECT OrderNumber FROM Orders");
@@ -90,7 +90,7 @@ if (!isset($_SESSION["CustomerID"])) {
         <div class='row'>
             <div class='col'></div>
             <div class='col'></div>
-            <div class='col display-6'>Total: $<?= $total ?></div>
+            <div class='col display-6'>Total : $<?= $total ?></div>
         </div>
         <div class='row'>
             <div class='col'></div>
@@ -99,7 +99,7 @@ if (!isset($_SESSION["CustomerID"])) {
         </div>
 
         <?php
-        if ($_SESSION["AccessLevel" == 1]) {
+        if ($_SESSION["AccessLevel"] == 1) {
             if (!empty($_GET["status"])) {
                 if ($_GET["status"] == "CLOSED") {
                     $conn->exec("UPDATE Orders SET status='CLOSED' WHERE OrderNumber='$orderNumber'");
@@ -111,11 +111,13 @@ if (!isset($_SESSION["CustomerID"])) {
             }
             if ($status == "OPEN") {
                 echo "STATUS: OPEN";
-                echo "<p><a href='invoice.php?order=" . $orderNumber . "&status=CLOSED'>Click here to close</a></p>";
+                echo "<p><a href='invoice.php?order=" . $orderNumber . "&status=OPEN'>Click here to close</a></p>";
             } else {
                 echo "STATUS: CLOSED";
-                echo "<p><a href='invoice.php?order=" . $orderNumber . "&status=OPEN'>Click here to open</a></p>";
+                echo "<p><a href='invoice.php?order=" . $orderNumber . "&status=CLOSED'>Click here to open</a></p>";
             }
         }
+
+
     }
 }
