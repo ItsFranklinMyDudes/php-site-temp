@@ -16,8 +16,8 @@ if (isset($_POST['login'])) {
             $_SESSION['EmailAddress'] = $row['EmailAddress'];
             $_SESSION['AccessLevel'] = $row['AccessLevel'];
             $_SESSION['CustomerID'] = $row['CustomerID'];
-        } else {
             header("location:index.php");
+        } else {
             echo "<div class='alert alert-danger'>Invalid username or password</div>";
         }
     } else {
