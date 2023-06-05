@@ -18,9 +18,10 @@
  //echo '<pre>'; print_r($_SESSION["ShoppingCart"]); echo '</pre>';
 
 
-if (isset($_SESSION["FirstName"])) {
+if (isset($_SESSION["FirstName"])) { //if user is signed/logined in
 date_default_timezone_set("Australia/Sydney");
 $status = "";
+// this block is delete the item from your cart
 if (isset($_POST['action']) && $_POST['action'] == "remove") {
     if (!empty($_SESSION["ShoppingCart"])) {
         foreach ($_SESSION["ShoppingCart"] as $key => $value) {
