@@ -1,3 +1,3 @@
 <?php
-
-echo "Hello Ryan";
+//just sends Hello Declan to the page
+echo "Hello Declan";

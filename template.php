@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-
+<!--Navbar to choose a page you want to go too-->
 <nav class="navbar navbar-expand-sm bg-secondary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <img src="images/maccas-logo.jpg" width="65rem" height="40rem"> </a>
+        <a class="navbar-brand" href="index.php"> <img src="images/maccas-logo.jpg" width="65rem" height="40rem"> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,6 +25,7 @@
                 </li>
 
                 <?php
+//                checks if the user has created an account
                 if (isset($_SESSION["FirstName"])) {
                     echo '<li class="nav-item" ><a class="nav-link" href = "orderForm.php">Order Form </a ></li >';
                     echo '<li class="nav-item" ><a class="nav-link" href = "invoice.php">Invoices</a ></li >';

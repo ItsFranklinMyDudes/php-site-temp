@@ -1,7 +1,9 @@
 <?php include "template.php";
 /** @var $conn */
 ?>
+<!--
 
+-->
 
 <title>Contact Us</title>
 <body>
@@ -25,18 +27,16 @@
 <?php
 //if (isset($_POST['formSubmit'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //collects data then make sure no one can inject scripts into the DataBase
     $userEmail = sanitiseData($_POST['contactEmail']);
     $userMessage = sanitiseData($_POST['contactMessage']);
 
+    //getting read to read the $userEmail and $userMessage are going into the DataBase
     $sqlStmt = $conn->prepare("INSERT INTO Contact (ContactEmail, Message) VALUES (:ContactEmail, :Message)");
     $sqlStmt->bindParam(':ContactEmail', $userEmail);
     $sqlStmt->bindParam(':Message', $userMessage);
+    //reads the data to the DB
     $sqlStmt->execute();
-
-
-
-
-
 
 //    $csvFile = fopen("contact.csv", "a");
 //    fwrite($csvFile, $userEmail.",".$userMessage."\n");
