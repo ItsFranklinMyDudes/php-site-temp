@@ -32,9 +32,11 @@
                 } else {
                     echo '<li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
                 }
+//                checks if the user has admin perms
                 if (isset($_SESSION["AccessLevel"])) {
                     if ($_SESSION["AccessLevel"] == 1) {
                         ?>
+<!--                        drop down menu for admins, to edit the products-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
@@ -52,6 +54,7 @@
             </ul>
         </div>
         <?php
+        //displays a welcome message when logged in and has a logout button
         if (isset($_SESSION["FirstName"])) {
             echo '<div class="bg-light">Welcome, ' . $_SESSION["FirstName"] . '!<a class="nav-link" href="logout.php">Logout</a></div>';
         }
@@ -62,12 +65,13 @@
 
 <?php
 
-
+//database connection
 $conn = new SQLite3("DB") or die("Unable to open database");
 
-
+//old orderform
 $productNames = array("product1" => "Darth Vader Helmet", "product2" => "Grogu Plush", "product3" => "ROTJ Jigsaw", "product4" => "Aftermath", "product5" => "Alphabet Squadron");
 $productPrices = array("product1" => 299.0, "product2" => 32.95, "product3" => 219.95, "product4" => 24.95, "product5" => 25.95);
+//this function tells you when the page was updated with the exact time n data
 function footer(): string
 {
     date_default_timezone_set('Australia/Canberra');
@@ -75,7 +79,7 @@ function footer(): string
     $footer = "This page was last modified: " . date("F d Y H:i:s.", filemtime($filename));
     return $footer;
 }
-
+//this function makes sure you can run scripts within the string
 function sanitiseData($unsanitisedData): string
 {
     $unsanitisedData = trim($unsanitisedData);
