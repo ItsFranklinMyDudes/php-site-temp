@@ -21,7 +21,7 @@ people who have been given the appropriate permission will be able to add, remov
 
 Product info will be stored is a statement that indicates that information related to a product will be saved in a database.
 #### This information includes the product
-- name
+- name+
 - price
 - description
 - quantity (stock) of the product. 
@@ -55,27 +55,3 @@ title Contact Us
 ```
 ## Planning Diagram - Wireframe
 <img src="images/wireframes/main-page.jpg" alt="Main Page wireframe">
-
-## FlowChart
-### User Chart
-```mermaid
-flowchart LR
-    terminalStart([Start])
-    %% Comment
-    terminalEnd([End])
-    thresholdSet(Register)
-    setPiezoPin(Login)
-    currentDistanceReading(Logout)
-    activatePiezo(Manage Product)
-    deactivatePiezo(Normal page)
-    ifDistanceLessThanThreshold(Admin)
-    
-    terminalStart --> thresholdSet
-    thresholdSet --> setPiezoPin
-    setPiezoPin --> ifDistanceLessThanThreshold
-    ifDistanceLessThanThreshold --> |True| activatePiezo
-    ifDistanceLessThanThreshold --> |False| deactivatePiezo
-    deactivatePiezo --> currentDistanceReading
-    activatePiezo --> currentDistanceReading
-    currentDistanceReading --> terminalEnd
-```

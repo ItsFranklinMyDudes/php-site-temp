@@ -8,7 +8,11 @@
         <div class="col-6">
             <p>username: admin@admin.com</p>
             <p>Password: admin</p>
+            <p></p>
+            <p>username: g</p>
+            <p>Password: g</p>
         </div>
+
         <div class="col-6">
 <!--            if there is no email asigned the to cookie-->
             <?php if (!isset($_SESSION["EmailAddress"])) : ?>
